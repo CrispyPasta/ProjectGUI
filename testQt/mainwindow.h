@@ -16,7 +16,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_startButton_clicked();
+
+    void on_pauseButton_clicked();
+
+    void on_stopButton_clicked();
 
 private:
     Ui::MainWindow *ui; //the ui object will allow us to access all the widgets we're using
