@@ -10,9 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->functionPicker->addItem("Color Classification");
     ui->functionPicker->addItem("Mixing Quantification");
     ui->functionPicker->addItem("Sedimentation Quantification");
-    ui->functionPicker->addItem("Flow Tracking");
+    ui->functionPicker->addItem("Flow Tracking Function");
 
-    QPixmap temporaryImage("/home/armandt/Documents/testQt/testQt/neptune.jpg");
+    QPixmap temporaryImage("/home/armandt/Documents/ProjectGUI/testQt/neptune.jpg");
     ui->imageLabel->setBackgroundRole(QPalette::Base);
     ui->imageLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     ui->imageLabel->setScaledContents(true);
@@ -26,18 +26,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_startButton_clicked()
 {
+    ui->inputTextEdit->setReadOnly(true);       //user isn't allowed to edit the instructions after things have been started.
     ui->outputTextEdit->clear();
     ui->outputTextEdit->append("Starting rotation and processing functions.");
 }
 
 void MainWindow::on_pauseButton_clicked()
 {
-    ui->outputTextEdit->clear();
+    ui->outputTextEdit->clear();                //user also can't edit them if the system is paused. That'd be nice but too much work.
     ui->outputTextEdit->append("Pausing rotation and processing functions.");
 }
 
 void MainWindow::on_stopButton_clicked()
 {
+    ui->inputTextEdit->setReadOnly(false);      //If the whole thing is stopped, re-enable the text box.
     ui->outputTextEdit->clear();
     ui->outputTextEdit->append("Stopping rotation and processing functions.");
 }
