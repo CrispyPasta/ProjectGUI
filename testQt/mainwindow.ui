@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1076</width>
-    <height>619</height>
+    <width>1087</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,28 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>RPM List:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QTextEdit" name="inputTextEdit">
+       <property name="whatsThis">
+        <string>Enter RPM and duration in minutes. E.g. 1000;2. </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Duration List (in seconds):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="inputTextEdit_2">
        <property name="whatsThis">
         <string>Enter RPM and duration in minutes. E.g. 1000;2. </string>
        </property>
@@ -105,7 +126,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1076</width>
+     <width>1087</width>
      <height>22</height>
     </rect>
    </property>

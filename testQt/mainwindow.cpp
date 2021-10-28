@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->functionPicker->addItem("Sedimentation Quantification");
     ui->functionPicker->addItem("Flow Tracking Function");
 
-    QPixmap temporaryImage("/home/armandt/Documents/ProjectGUI/testQt/neptune.jpg");
+    QPixmap temporaryImage("/home/armandt/Documents/ProjectGUI/testQt/Images/neptune.jpg");
     ui->imageLabel->setBackgroundRole(QPalette::Base);
     ui->imageLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     ui->imageLabel->setScaledContents(true);
