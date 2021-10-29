@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
+#include <iostream>
+#include <deque>
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -15,6 +19,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    deque<int> rpmArray;
+    deque<int> durationArray;
+
+    void parseRPMs(QString s);
+
+    void parseDurations(QString s);
+
 private slots:
     void on_startButton_clicked();
 
@@ -24,6 +35,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui; //the ui object will allow us to access all the widgets we're using
+
+    void printOutput(QString s);
 };
 
 #endif // MAINWINDOW_H

@@ -39,7 +39,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="inputTextEdit">
+      <widget class="QTextEdit" name="rpmTextEdit">
        <property name="whatsThis">
         <string>Enter RPM and duration in minutes. E.g. 1000;2. </string>
        </property>
@@ -53,7 +53,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="inputTextEdit_2">
+      <widget class="QTextEdit" name="durationTextEdit">
        <property name="whatsThis">
         <string>Enter RPM and duration in minutes. E.g. 1000;2. </string>
        </property>
