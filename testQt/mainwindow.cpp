@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <deque>
+#include <JetsonGPIO.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -30,6 +31,7 @@ void MainWindow::printOutput(QString s) {
 }
 
 void MainWindow::parseRPMs(QString s) {
+    GPIO::setwarnings(false);
     bool done = false;
 
     if (s.contains('\n')) {
@@ -43,8 +45,8 @@ void MainWindow::parseRPMs(QString s) {
     while (!done) {
         r = s.mid(0, s.indexOf('\n'));          //copy the text up to the newline
         i = r.toInt();
-        if (i < 0) {
-            i = 0;
+        if (i < 500) {
+            i = 500;
         }
         if (i > 4500) {
             i = 4500;
@@ -60,8 +62,8 @@ void MainWindow::parseRPMs(QString s) {
         }
     }
     i = s.toInt();
-    if (i < 0) {
-        i = 0;
+    if (i < 500) {
+        i = 500;
     }
     if (i > 4500) {
         i = 4500;
@@ -132,7 +134,7 @@ void MainWindow::on_startButton_clicked()
 
 void MainWindow::on_pauseButton_clicked()
 {
-    ui->outputTextEdit->clear();                //user also can't edit them if the system is paused. That'd be nice but too much work.
+    //user also can't edit them if the system is paused. That'd be nice but too much work.
     ui->outputTextEdit->append("Pausing rotation and processing functions.");
 }
 

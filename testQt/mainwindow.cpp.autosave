@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <deque>
+#include <JetsonGPIO.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -132,7 +133,7 @@ void MainWindow::on_startButton_clicked()
 
 void MainWindow::on_pauseButton_clicked()
 {
-                   //user also can't edit them if the system is paused. That'd be nice but too much work.
+    //user also can't edit them if the system is paused. That'd be nice but too much work.
     ui->outputTextEdit->append("Pausing rotation and processing functions.");
 }
 

@@ -18,9 +18,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    int testingLinkage = 160;
-    double linearized = Color::linearizeRGB(testingLinkage);
-    cout << linearized << '\n';
-
     return application.exec();
 }
